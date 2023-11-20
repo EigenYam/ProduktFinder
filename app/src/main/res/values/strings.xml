@@ -2,12 +2,12 @@
     <string name="app_name">ProduktFinder</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
+    <string name="first_fragment_label">Home</string>
     <string name="second_fragment_label">Second Fragment</string>
-    <string name="coop_fragment_label">Coop Fragment</string>
-    <string name="migros_fragment_label">Migros Fragment</string>
-    <string name="einkaufsliste_fragment_label">Einkaufsliste Fragment</string>
-    <string name="einstellungen_fragment_label">Einstellungen Fragment</string>
+    <string name="coop_fragment_label">Coop</string>
+    <string name="migros_fragment_label">Migros</string>
+    <string name="einkaufsliste_fragment_label">Einkaufsliste</string>
+    <string name="einstellungen_fragment_label">Einstellungen</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
