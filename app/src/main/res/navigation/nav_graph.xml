@@ -14,6 +14,14 @@
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
+
+        <action
+            android:id="@+id/action_FirstFragment_to_CoopFragment"
+            app:destination="@id/CoopFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_MigrosFragment"
+            app:destination="@id/MigrosFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
@@ -25,4 +33,46 @@
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/CoopFragment"
+        android:name="com.example.produktfinder.CoopFragment"
+        android:label="@string/coop_fragment_label"
+        tools:layout="@layout/fragment_coop" >
+        <action
+            android:id="@+id/action_CoopFragment_to_FirstFragment2"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/MigrosFragment"
+        android:name="com.example.produktfinder.MigrosFragment"
+        android:label="@string/migros_fragment_label"
+        tools:layout="@layout/fragment_migros" >
+        <action
+            android:id="@+id/action_MigrosFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/EinkaufslisteFragment"
+        android:name="com.example.produktfinder.EinkaufslisteFragment"
+        android:label="@string/einkaufsliste_fragment_label"
+        tools:layout="@layout/fragment_einkaufsliste" >
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/EinstellungenFragment"
+        android:name="com.example.produktfinder.EinstellungenFragment"
+        android:label="@string/einstellungen_fragment_label"
+        tools:layout="@layout/fragment_einstellungen" >
+
+        <action
+            android:id="@+id/action_global_settingsFragment"
+            app:destination="@id/EinstellungenFragment" />
+
+    </fragment>
+
+
 </navigation>

@@ -35,10 +35,21 @@ class FirstFragment : Fragment() {
         binding.buttonFirst.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
+
+        binding.buttonCoop.setOnClickListener {
+            findNavController().navigate(R.id.action_FirstFragment_to_CoopFragment)
+        }
+
+        binding.buttonMigros.setOnClickListener {
+            findNavController().navigate(R.id.action_FirstFragment_to_MigrosFragment)
+        }
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
+
 }
