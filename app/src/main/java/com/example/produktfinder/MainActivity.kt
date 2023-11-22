@@ -1,58 +1,84 @@
 package com.example.produktfinder
 
+import android.content.Context
+import android.content.ContextWrapper
+import android.database.sqlite.SQLiteDatabase
+import android.database.sqlite.SQLiteOpenHelper
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
+import android.text.Editable
+import android.text.TextWatcher
+import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import android.view.Menu
-import android.view.MenuItem
-import com.example.produktfinder.databinding.ActivityMainBinding
+import java.io.*
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var editTextSearch: EditText
+    private lateinit var databaseHelper: DatabaseHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        editTextSearch = findViewById(R.id.editTextSearch)
+        databaseHelper = DatabaseHelper(this)
 
-        setSupportActionBar(binding.toolbar)
+        editTextSearch.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
-        appBarConfiguration = AppBarConfiguration(navController.graph)
-        setupActionBarWithNavController(navController, appBarConfiguration)
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
 
-        binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+            override fun afterTextChanged(s: Editable?) {
+                val searchText = editTextSearch.text.toString().trim()
+                searchInDatabase(searchText)
+            }
+        })
+
+        // Kopiere die Datenbank aus dem assets-Ordner, falls sie noch nicht existiert
+        copyDatabaseFromAssets()
+    }
+
+    private fun searchInDatabase(searchText: String) {
+        val db: SQLiteDatabase = databaseHelper.readableDatabase
+        val cursor = db.rawQuery("SELECT * FROM Categories WHERE category_name LIKE '%$searchText%'", null)
+        // Verarbeite das Cursor-Ergebnis und zeige es in deiner App an
+        // z.B. durch eine RecyclerView oder eine ListView
+        // Beispiel: while (cursor.moveToNext()) { ... }
+        cursor.close()
+    }
+
+    private fun copyDatabaseFromAssets() {
+        val contextWrapper = ContextWrapper(applicationContext)
+        val dbPath = contextWrapper.getDatabasePath("ProduktfinderDB.db")
+
+        if (!dbPath.exists()) {
+            try {
+                val inputStream: InputStream = assets.open("databases/ProduktfinderDB.db")
+                val outputStream: OutputStream = FileOutputStream(dbPath)
+
+                val buffer = ByteArray(1024)
+                var length: Int
+                while (inputStream.read(buffer).also { length = it } > 0) {
+                    outputStream.write(buffer, 0, length)
+                }
+
+                outputStream.flush()
+                outputStream.close()
+                inputStream.close()
+            } catch (e: IOException) {
+                e.printStackTrace()
+            }
         }
     }
+}
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
+class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, "ProduktfinderDB.db", null, 1) {
+    override fun onCreate(db: SQLiteDatabase?) {
+        // Hier kannst du die Datenbank initialisieren
+        // Beispiel: Erstellen von Tabellen, Initialisierung von Daten usw.
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        return when (item.itemId) {
-            R.id.action_settings -> true
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
-        return navController.navigateUp(appBarConfiguration)
-                || super.onSupportNavigateUp()
+    override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
+        // Hier kannst du ein Upgrade der Datenbank durchführen, falls nötig
     }
 }
