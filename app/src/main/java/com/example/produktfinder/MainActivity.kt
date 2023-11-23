@@ -12,6 +12,7 @@ import android.view.MenuItem
 import com.example.produktfinder.databinding.ActivityMainBinding
 import androidx.navigation.NavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,6 +34,26 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         binding.bottomNavigation.setupWithNavController(navController)
+
+        val navView: BottomNavigationView = findViewById(R.id.bottom_navigation)
+
+        navView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.home -> {
+                    navController.navigate(R.id.FirstFragment)
+                    true
+                }
+                R.id.einkaufsliste -> {
+                    navController.navigate(R.id.EinkaufslisteFragment)
+                    true
+                }
+                R.id.einstellungen -> {
+                    navController.navigate(R.id.EinstellungenFragment)
+                    true
+                }
+                else -> false
+            }
+        }
 
 
     }

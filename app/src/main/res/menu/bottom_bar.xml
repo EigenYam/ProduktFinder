@@ -4,14 +4,14 @@
         android:id="@+id/home"
         android:icon="@drawable/home"
         android:title="Home" />
+    <item
+        android:id="@+id/einkaufsliste"
+        android:icon="@drawable/liste"
+        android:title="@string/einkaufsliste_fragment_label" />
 
     <item
         android:id="@+id/einstellungen"
         android:icon="@drawable/einstellungen"
         android:title="@string/einstellungen_fragment_label" />
 
-    <item
-        android:id="@+id/einkaufsliste"
-        android:icon="@drawable/liste"
-        android:title="@string/einkaufsliste_fragment_label" />
 </menu>
