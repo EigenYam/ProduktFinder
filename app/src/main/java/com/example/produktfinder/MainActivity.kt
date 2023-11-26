@@ -1,6 +1,8 @@
 package com.example.produktfinder
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -9,6 +11,8 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import com.example.produktfinder.databinding.ActivityMainBinding
 import androidx.navigation.NavController
 import androidx.navigation.ui.setupWithNavController
@@ -54,7 +58,6 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
-
 
     }
 
