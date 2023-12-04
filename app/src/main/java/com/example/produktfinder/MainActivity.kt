@@ -13,6 +13,8 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
+import android.widget.Button
+import android.widget.TextView
 import com.example.produktfinder.databinding.ActivityMainBinding
 import androidx.navigation.NavController
 import androidx.navigation.ui.setupWithNavController
@@ -23,6 +25,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
+
+    private lateinit var location_button: Button
+    private lateinit var locationTextView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
