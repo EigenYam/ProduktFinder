@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Coop Supermarkt Aarberg Center",
+    "latitude": 47.042683253716305,
+    "longitude": 7.276112206035155
+  },
+  {
+    "name": "Coop Supermarkt Biberist",
+    "latitude": 47.181905944882786,
+    "longitude": 7.563173026938791
+  },
+  {
+    "name": "Coop Supermarkt Biel Bahnhof",
+    "latitude": 47.130555068941604,
+    "longitude": 7.243113057625157
+  },
+  {
+    "name": "Coop Supermarkt Lyss Stigli",
+    "latitude": 58.8578443,
+    "longitude": 3.2933506
+  },
+  {
+    "name": "Coop Supermarkt Grenchen Zentrum",
+    "latitude": 47.07282192692433,
+    "longitude": 7.302662228787542
+  },
+  {
+    "name": "Coop Supermarkt Heimberg Center",
+    "latitude": 46.77997884959211,
+    "longitude": 7.609166984599043
+  },
+  {
+    "name": "Coop Supermarkt Biel Boujean",
+    "latitude": 47.161713530170374,
+    "longitude": 7.294342984610177
+  },
+  {
+    "name": "Coop Supermarkt Bern Wankdorf Center",
+    "latitude": 46.96359424584114,
+    "longitude": 7.465290242276323
+  }
+]
