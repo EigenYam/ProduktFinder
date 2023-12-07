@@ -10,7 +10,6 @@
     <string name="einstellungen_fragment_label">Einstellungen</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-
     <string name="coop"> Coop </string>
     <string name="migros"> Migros </string>
     <string name="favorit"> Supermarkt auswählen</string>
@@ -51,6 +50,8 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="result">Nächstgelegene Standorte:</string>
+    <string name="supermaerkte_anzeigen">Nächstgelegene Supermärkte anzeigen</string>
+    <string name="logo">Logo</string>
 </resources>
