@@ -1,59 +1,82 @@
 package com.example.produktfinder
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.ListView
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class EinkaufslisteFragment : Fragment(R.layout.fragment_einkaufsliste) {
 
-/**
- * A simple [Fragment] subclass.
- * Use the [EinkaufslisteFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class EinkaufslisteFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private val categories = arrayOf("Fleisch", "Früchte", "Gemüse", "Getränke", "Backwaren", "Milchprodukte")
+    private lateinit var categoryListView: ListView
+    private lateinit var sharedPreferences: SharedPreferences
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        categoryListView = view.findViewById(R.id.categoryListView)
+
+        val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_multiple_choice, categories)
+        categoryListView.adapter = adapter
+        categoryListView.choiceMode = ListView.CHOICE_MODE_MULTIPLE
+
+        // Laden der gespeicherten Kategorien
+        sharedPreferences = requireActivity().getPreferences(Context.MODE_PRIVATE)
+        val savedCategories = loadSavedCategories()
+
+        for (i in 0 until adapter.count) {
+            if (savedCategories.contains(categories[i])) {
+                categoryListView.setItemChecked(i, true)
+            }
+        }
+
+        categoryListView.setOnItemClickListener(AdapterView.OnItemClickListener { _, _, position, _ ->
+            val selectedCategory = categories[position]
+            val isSelected = categoryListView.isItemChecked(position)
+
+            val message = if (isSelected) {
+                "Ausgewählt: $selectedCategory"
+            } else {
+                "Abgewählt: $selectedCategory"
+            }
+
+            Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
+
+            // Aktualisieren der gespeicherten Kategorien
+            updateSavedCategories(selectedCategory, isSelected)
+        })
+
+        val saveButton: Button = view.findViewById(R.id.bottomButton)
+        saveButton.setOnClickListener {
+            // Hier kannst du die gespeicherten Kategorien abrufen und weiterverarbeiten
+            val savedCategories = loadSavedCategories()
+            Toast.makeText(requireContext(), "Gespeicherte Kategorien: $savedCategories", Toast.LENGTH_SHORT).show()
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_einkaufsliste, container, false)
+    private fun updateSavedCategories(category: String, isSelected: Boolean) {
+        val savedCategories = HashSet(loadSavedCategories())
+
+        if (isSelected) {
+            savedCategories.add(category)
+        } else {
+            savedCategories.remove(category)
+        }
+
+        val editor = sharedPreferences.edit()
+        editor.putStringSet("selectedCategories", savedCategories)
+        editor.apply()
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment EinkaufslisteFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            EinkaufslisteFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun loadSavedCategories(): Set<String> {
+        return sharedPreferences.getStringSet("selectedCategories", HashSet()) ?: HashSet()
     }
 }

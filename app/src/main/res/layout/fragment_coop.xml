@@ -18,8 +18,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="@string/produktfinder"
             android:fontFamily="casual"
+            android:text="@string/produktfinder"
             android:textColor="@color/white"
             android:textSize="34sp"
             android:textStyle="bold"
@@ -47,25 +47,16 @@
             app:layout_constraintStart_toEndOf="@+id/textView"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <AutoCompleteTextView
-            android:id="@+id/autoCompleteTextView"
-            android:layout_width="300dp"
+        <TextView
+            android:id="@+id/savedCategoriesTextView"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:minHeight="48dp"
-            android:text="Kategorien..."
+            android:layout_gravity="center"
+            android:layout_marginTop="92dp"
+            android:text="Deine Einkaufsliste:"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView3" />
-
-        <!-- RecyclerView für ausgewählte Produkte -->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/selectedProductsRecyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@id/autoCompleteTextView" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
