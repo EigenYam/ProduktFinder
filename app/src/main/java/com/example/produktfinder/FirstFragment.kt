@@ -12,6 +12,7 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.location.Location
 import android.location.LocationManager
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -24,6 +25,7 @@ import com.google.android.gms.location.Priority
 import com.google.android.gms.tasks.CancellationTokenSource
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
+import java.lang.Math.round
 
 
 data class Shop(
@@ -81,17 +83,47 @@ class FirstFragment : Fragment() {
                                 currentLocation.latitude = latitude
                                 currentLocation.longitude = longitude
 
-                                binding.textViewLocation.text = "Latitude: $latitude\nLongitude: $longitude"
+                                //binding.textViewLocation.text = "Latitude: $latitude\nLongitude: $longitude"
 
                                 val homeLocation = Location("HomeLocation")
                                 homeLocation.latitude = 47.15210819897755
                                 homeLocation.longitude = 7.322771786461776
 
-                                val closestShops = getClosestShops(shops, currentLocation)
+                                //val closestShops = getClosestShops(shops, currentLocation)
+                                val closestShopDistancePairs = getClosestShopsWithDistance(shops, currentLocation)
 
-                                val shopInfo = closestShops.joinToString("\n") { it.name }
+                                //val shopInfo = closestShops.joinToString("\n") { it.name }
+                                val shopInfo = closestShopDistancePairs.joinToString("\n") { (shop, distance) ->
+                                    "${shop.name} -  $distance km"
+                                }
 
-                                binding.textViewLocation.text = shopInfo
+                                //closestShops.forEach { shop ->
+                                closestShopDistancePairs.forEach { (shop, distance) ->
+                                    val shopTextView = TextView(requireContext())
+                                    // Customize the appearance for each shop item
+                                    shopTextView.text = "${shop.name} - $distance km \n"
+                                    shopTextView.setOnClickListener {
+                                        // Pass the selected shop information to the next fragment
+                                        val bundle = Bundle().apply {
+                                            putString("shopName", shop.name)
+                                        }
+                                        when {
+                                        shop.name.startsWith("Migros", ignoreCase = true) -> {
+                                            findNavController().navigate(R.id.action_FirstFragment_to_MigrosFragment, bundle)
+                                        }
+                                        shop.name.startsWith("Coop", ignoreCase = true) -> {
+                                            findNavController().navigate(R.id.action_FirstFragment_to_CoopFragment, bundle)
+                                        }
+                                        else -> {
+                                            findNavController().navigate(R.id.action_FirstFragment_to_MigrosFragment, bundle)
+                                        }
+                                    }
+                                    }
+                                    // Add the TextView to your layout
+                                    binding.yourContainer.addView(shopTextView)
+                                }
+
+                                //binding.textViewLocation.text = shopInfo
                             }
                         }
                     } else  {
@@ -175,7 +207,7 @@ class FirstFragment : Fragment() {
         return gson.fromJson(json, shopType) ?: emptyList()
     }
 
-    private fun getClosestShops(shops: List<Shop>, currentLocation: Location, limit: Int = 5): List<Shop> {
+    /*private fun getClosestShops(shops: List<Shop>, currentLocation: Location, limit: Int = 5): List<Shop> {
         val sortedShops = shops.sortedBy { shop ->
             val shopLocation = Location("ShopLocation")
             shopLocation.latitude = shop.latitude
@@ -186,20 +218,25 @@ class FirstFragment : Fragment() {
         }
         //Limit is set to 5 to only display the 5 closest shops
         return sortedShops.subList(0, limit)
-    }
+    }*/
+    private fun getClosestShopsWithDistance(shops: List<Shop>, currentLocation: Location, limit: Int = 5): List<Pair<Shop, Double>> {
+        val shopDistancePairs = shops.map { shop ->
+            val shopLocation = Location("ShopLocation")
+            shopLocation.latitude = shop.latitude
+            shopLocation.longitude = shop.longitude
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+            val distanceM = currentLocation.distanceTo(shopLocation)
+            val distanceKm = round((distanceM / 1000.0) * 10.0) / 10.0 // Runde auf eine Dezimalstelle
 
-        binding.buttonCoop.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_CoopFragment)
+
+            Pair(shop, distanceKm)
         }
 
-        binding.buttonMigros.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_MigrosFragment)
-        }
-    }
+        val sortedPairs = shopDistancePairs.sortedBy { it.second }
 
+        // Limit is set to 5 to only return the 5 closest shops with distances
+        return sortedPairs.subList(0, minOf(limit, sortedPairs.size))
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()

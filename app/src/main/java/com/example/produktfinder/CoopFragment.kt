@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
+import android.widget.TextView
 
 class CoopFragment : Fragment() {
     override fun onCreateView(
@@ -27,6 +28,12 @@ class CoopFragment : Fragment() {
 
         // Binden Sie den ArrayAdapter an die AutoCompleteTextView
         autoCompleteTextView.setAdapter(adapter)
+
+        val shopName = arguments?.getString("shopName")
+
+        // Nutze die Daten im Fragment, z.B. setze sie in TextViews
+        val textViewName = view?.findViewById<TextView>(R.id.textViewNameCoop)
+        textViewName?.text = "$shopName"
 
         return view
     }

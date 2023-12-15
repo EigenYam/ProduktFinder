@@ -38,5 +38,20 @@
     "name": "Coop Supermarkt Bern Wankdorf Center",
     "latitude": 46.96359424584114,
     "longitude": 7.465290242276323
+  },
+  {
+    "name": "Migros Brügg - Centre Brügg",
+    "latitude": 47.11979903290481,
+    "longitude": 7.267011725948647
+  },
+  {
+    "name": "Migros Bern - Marktgasse",
+    "latitude": 46.94835870888534,
+    "longitude": 7.4450907423861405
+  },
+  {
+    "name": "Migros Lyss - Lyssbackpark",
+    "latitude": 47.07877872746578,
+    "longitude": 7.304018298207769
   }
 ]
