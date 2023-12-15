@@ -38,7 +38,7 @@ class CoopFragment : Fragment(R.layout.fragment_coop) {
             }
         } else {
             // Zeige die gespeicherten Kategorien an
-            savedCategoriesTextView.text = "Deine Einkaufsliste: $savedCategories"
+            savedCategoriesTextView.text = "Deine Einkaufsliste:\n${savedCategories.joinToString("\n")}"
 
             // Füge Formatierungsanpassungen hinzu
             savedCategoriesTextView.textSize = 18f // Ändere die Textgröße nach Bedarf
