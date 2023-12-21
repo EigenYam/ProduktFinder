@@ -1,40 +1,62 @@
 package com.example.produktfinder
 
+import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.AutoCompleteTextView
 import android.widget.TextView
+import androidx.fragment.app.Fragment
+import android.graphics.Typeface
+import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 
-class CoopFragment : Fragment() {
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_coop, container, false)
+class CoopFragment : Fragment(R.layout.fragment_coop) {
 
-        // Zugriff auf die AutoCompleteTextView in Ihrem XML-Layout
-        val autoCompleteTextView = view.findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView)
+    private lateinit var savedCategoriesTextView: TextView
 
-        // Zugriff auf die String-Array-Ressource
-        val stringArray = resources.getStringArray(R.array.lebensmittel_array)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        // Erstellen Sie ein ArrayAdapter, um die String-Array-Ressource an die AutoCompleteTextView zu binden
-        val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, stringArray)
+        savedCategoriesTextView = view.findViewById(R.id.savedCategoriesTextView)
 
-        // Binden Sie den ArrayAdapter an die AutoCompleteTextView
-        autoCompleteTextView.setAdapter(adapter)
+        // Lade die gespeicherten Kategorien
+        val savedCategories = loadSavedCategories()
 
-        val shopName = arguments?.getString("shopName")
+        // Überprüfe, ob die Liste leer ist
+        if (savedCategories.isEmpty()) {
+            // Zeige die Nachricht an, dass der Kunde eine Liste erstellen sollte
+            savedCategoriesTextView.text = "Erstelle zuerst deine Einkaufsliste"
 
-        // Nutze die Daten im Fragment, z.B. setze sie in TextViews
-        val textViewName = view?.findViewById<TextView>(R.id.textViewNameCoop)
-        textViewName?.text = "$shopName"
+            // Füge Formatierungsanpassungen hinzu
+            savedCategoriesTextView.textSize = 18f // Ändere die Textgröße nach Bedarf
+            savedCategoriesTextView.setTextColor(requireContext().getColor(R.color.white)) // Ändere die Textfarbe nach Bedarf (z.B., R.color.white)
+            savedCategoriesTextView.setTypeface(null, Typeface.BOLD) // Setze den Text fett
+            savedCategoriesTextView.setPadding(16, 16, 16, 16) // Füge Padding hinzu (in Pixeln)
+            savedCategoriesTextView.layoutParams?.let { params ->
+                if (params is ViewGroup.MarginLayoutParams) {
+                    params.topMargin = 24 // Füge Margin hinzu (in Pixeln)
+                }
+            }
+        } else {
+            // Zeige die gespeicherten Kategorien an
+            savedCategoriesTextView.text = "Deine Einkaufsliste:\n${savedCategories.joinToString("\n")}"
 
-        return view
+            // Füge Formatierungsanpassungen hinzu
+            savedCategoriesTextView.textSize = 18f // Ändere die Textgröße nach Bedarf
+            savedCategoriesTextView.setTextColor(requireContext().getColor(R.color.white)) // Ändere die Textfarbe nach Bedarf (z.B., R.color.white)
+            savedCategoriesTextView.setTypeface(null, Typeface.BOLD) // Setze den Text fett
+            savedCategoriesTextView.setPadding(16, 16, 16, 16) // Füge Padding hinzu (in Pixeln)
+            savedCategoriesTextView.layoutParams?.let { params ->
+                if (params is ViewGroup.MarginLayoutParams) {
+                    params.topMargin = 24 // Füge Margin hinzu (in Pixeln)
+                }
+            }
+        }
     }
+
+    private fun Fragment.loadSavedCategories(): Set<String> {
+        val sharedPreferences = requireActivity().getPreferences(Context.MODE_PRIVATE)
+        return sharedPreferences.getStringSet("selectedCategories", HashSet()) ?: HashSet()
+    }
+
+    // Die restlichen Teile deines com.example.produktfinder.CoopFragment-Codes bleiben unverändert
 }

@@ -1,9 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="lebensmittel_array">
-        <item>Milchprodukte</item>
-        <item>Hygieneprodukte</item>
-        <item>Süssgetränke</item>
-        <item>Alkoholische Getränke</item>
+        <item>Raucherwaren</item>
+        <item>Textil / Reinigung</item>
+        <item>Bücher / Zeitschriften</item>
+        <item>Blumen / Pflanzen / Gartenpflege</item>
+        <item>Covergirl / LOreal / Maybeline</item>
+        <item>Gesichtspflege</item>
+        <item>Herrenpflege</item>
+        <item>Haarschmuck</item>
+        <item>Haarpflege</item>
+        <item>Haarstyling</item>
+        <item>Damenhygiene</item>
+        <item>Colorationen</item>
+        <item>Duschen / Baden</item>
+        <item>Hand / Haut</item>
+        <item>Mundpflege / Elektro</item>
+        <item>Sonnenschutz</item>
+        <item>Schminke</item>
+        <item>Sonnenbrille</item>
+        <item>Elektrokörper</item>
+        <item>Taschentücher</item>
+        <item>Naturkosmetik</item>
+        <item>Baby Pflege</item>
+        <item>Baby Windeln</item>
+        <item>Baby Hartwaren</item>
+        <item>Fashion in/out Baby mini</item>
+        <item>Tagwäsche Kids</item>
+        <item>Strumpfwaren Kids</item>
+        <item>Baby Textil</item>
+        <item>Baby Nahrung</item>
+        <item>Mix Unterwäsche</item>
+        <item>Herrentextilien</item>
+        <item>CNL Basics Erwachsene</item>
+        <item>Feinstrumpfwaren</item>
+        <item>Mix Strumpfwaren</item>
+        <item>Wolle</item>
+        <item>Mercerie</item>
+        <item>Waschmittel</item>
+        <item>Tchibo Non Food</item>
+        <item>Reinigen Hartwaren</item>
+        <item>Reinigungsmittel</item>
+        <item>WC Papier</item>
+        <item>Haushaltsfolien</item>
+        <item>Textilpflege Hartwaren</item>
+        <item>Elektro Haushalt</item>
+        <item>Velo</item>
+        <item>DIY Haushaltsbedarf</item>
+        <item>Küchenbedarf</item>
+        <item>Plastik aufbewahren</item>
+        <item>Soda</item>
+        <item>Tischdeko / Verbrauch</item>
+        <item>Mix Porzellan</item>
+        <item>Mineralwasser</item>
+        <item>Bier National</item>
+        <item>Süsswasser</item>
+        <item>Säfte/Sirup</item>
+        <item>Bier Regio</item>
+        <item>Ice Tea</item>
+        <item>Sport / Energy</item>
+        <item>Trendmeter</item>
+        <item>Bier Spezial</item>
+        <item>Mix Bier / Schnaps / Wein</item>
+        <item>Aperitiv / Spirituosen</item>
+        <item>Weisswein</item>
+        <item>Flaschenweine rot / rose</item>
+        <item>Literweine</item>
+        <item>Schaumweine</item>
+        <item>Käse</item>
+        <item>MIlch / Rahm / Butter</item>
+        <item>Joghurt / Dessert</item>
+        <item>Fisch</item>
+        <item>Fleisch</item>
+        <item>Konditorei frisch</item>
+        <item>Frischback / Toast</item>
+        <item>Frischback / Teig / Konditorei</item>
+        <item>Trockenfrüchte</item>
+        <item>Take It</item>
+        <item>F und G Convenience</item>
+        <item>Fruchtsäfte gekühlt</item>
+        <item>Ready to Drink</item>
+        <item>Schokolade</item>
+        <item>Regional</item>
+        <item>Traiteur Convenience</item>
+        <item>Einzelriegel</item>
+        <item>Bonbons / Kaugummi</item>
+        <item>Chips und Aperoprodukte</item>
+        <item>Tiefkühl Fertigprodukte</item>
+        <item>Tiefkühl Beilagen</item>
+        <item>Biscuit</item>
+        <item>Spez. Kaffee</item>
+        <item>Glace und Tiefkühl Dessert</item>
+        <item>Tiefkühl Fleisch / Geflügel</item>
+        <item>Tiefkühl Fisch</item>
+        <item>Offen Tee</item>
+        <item>Kaffee</item>
+        <item>Eier / UHT / Milchers.</item>
+        <item>Tee / Frühstückgetränke</item>
+        <item>Zucker / Mehl / Backz.</item>
+        <item>Konfi / Honig</item>
+        <item>OVO</item>
+        <item>Crusby</item>
+        <item>Müseli / Cerealien</item>
+        <item>Teigwaren</item>
+        <item>Fertiggerichte ungekühlt</item>
+        <item>Saucen / Tomaten / Pilzkonserven</item>
+        <item>Reis und Kartoffeln</item>
+        <item>Essigkoserven</item>
+        <item>F und G Konserven</item>
+        <item>Suppen / Bouillon</item>
+        <item>Öle / Essig / Salatsaucen</item>
+        <item>Gewürze / Kochzutaten</item>
+        <item>Fleisch und Fisch Koserven</item>
+        <item>Hundenahrung</item>
+        <item>Kleintiernahrung</item>
+        <item>Tierbedarf</item>
+        <item>Papeterie</item>
+        <item></item>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </string-array>
 </resources>
