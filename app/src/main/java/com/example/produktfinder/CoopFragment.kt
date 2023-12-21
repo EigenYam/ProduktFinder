@@ -16,6 +16,13 @@ class CoopFragment : Fragment(R.layout.fragment_coop) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val shopName = arguments?.getString("shopName")
+
+        // Nutze die Daten im Fragment, z.B. setze sie in TextViews
+        val textViewName = view?.findViewById<TextView>(R.id.textViewNameCoop)
+        textViewName?.text = "$shopName"
+
+
         savedCategoriesTextView = view.findViewById(R.id.savedCategoriesTextView)
 
         // Lade die gespeicherten Kategorien
@@ -38,7 +45,7 @@ class CoopFragment : Fragment(R.layout.fragment_coop) {
             }
         } else {
             // Zeige die gespeicherten Kategorien an
-            savedCategoriesTextView.text = "Deine Einkaufsliste:\n${savedCategories.joinToString("\n")}"
+            savedCategoriesTextView.text = "${savedCategories.joinToString("\n")}"
 
             // Füge Formatierungsanpassungen hinzu
             savedCategoriesTextView.textSize = 18f // Ändere die Textgröße nach Bedarf
@@ -58,5 +65,4 @@ class CoopFragment : Fragment(R.layout.fragment_coop) {
         return sharedPreferences.getStringSet("selectedCategories", HashSet()) ?: HashSet()
     }
 
-    // Die restlichen Teile deines com.example.produktfinder.CoopFragment-Codes bleiben unverändert
 }
