@@ -41,6 +41,7 @@
             android:text="Einkaufsliste speichern"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.261"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/categoryListView"
             app:layout_constraintVertical_bias="0.276" />
@@ -55,10 +56,10 @@
             android:src="@drawable/trashcan"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.322"
+            app:layout_constraintHorizontal_bias="0.513"
             app:layout_constraintStart_toEndOf="@+id/bottomButton"
             app:layout_constraintTop_toBottomOf="@+id/categoryListView"
-            app:layout_constraintVertical_bias="0.326" />
+            app:layout_constraintVertical_bias="0.276" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
