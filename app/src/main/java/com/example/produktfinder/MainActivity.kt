@@ -45,6 +45,10 @@ class MainActivity : AppCompatActivity() {
                     navController.navigate(R.id.FirstFragment)
                     true
                 }
+                R.id.shop -> {
+                navController.navigate(R.id.CoopFragment)
+                true
+                }
                 R.id.einkaufsliste -> {
                     navController.navigate(R.id.EinkaufslisteFragment)
                     true

@@ -7,7 +7,6 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import android.graphics.Typeface
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 
 class CoopFragment : Fragment(R.layout.fragment_coop) {
 

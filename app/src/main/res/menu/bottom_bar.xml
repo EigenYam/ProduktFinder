@@ -4,6 +4,12 @@
         android:id="@+id/home"
         android:icon="@drawable/home"
         android:title="Home" />
+
+    <item
+        android:id="@+id/shop"
+        android:icon="@drawable/shop"
+        android:title="Supermarkt" />
+
     <item
         android:id="@+id/einkaufsliste"
         android:icon="@drawable/liste"

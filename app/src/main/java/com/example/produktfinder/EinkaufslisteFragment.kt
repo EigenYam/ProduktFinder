@@ -9,13 +9,14 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ListView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 
 class EinkaufslisteFragment : Fragment(R.layout.fragment_einkaufsliste) {
 
-    private val categories = arrayOf("Fleisch", "Früchte", "Gemüse", "Getränke", "Backwaren", "Milchprodukte")
+    private val categories = arrayOf("Backwaren", "Chips und Aperoprodukte", "Duschen / Baden", "Fleisch", "Früchte", "Gemüse", "Getränke", "Haarpflege", "Milchprodukte", "Reinigungsmittel", "Säfte/Sirup", "Schaumweine")
     private lateinit var categoryListView: ListView
     private lateinit var sharedPreferences: SharedPreferences
 
@@ -60,6 +61,24 @@ class EinkaufslisteFragment : Fragment(R.layout.fragment_einkaufsliste) {
             val savedCategories = loadSavedCategories()
             Toast.makeText(requireContext(), "Gespeicherte Kategorien: $savedCategories", Toast.LENGTH_SHORT).show()
         }
+
+        val deleteButton: ImageButton = view.findViewById(R.id.deleteButton)
+        deleteButton.setOnClickListener {
+            clearSelectedCategories()
+            Toast.makeText(requireContext(), "Markierte Kategorien gelöscht", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun clearSelectedCategories() {
+        // Setze alle Listenelemente auf den nicht ausgewählten Zustand zurück
+        for (i in 0 until categoryListView.count) {
+            categoryListView.setItemChecked(i, false)
+        }
+
+        // Lösche die gespeicherten Kategorien aus den SharedPreferences
+        val editor = sharedPreferences.edit()
+        editor.remove("selectedCategories")
+        editor.apply()
     }
 
     private fun updateSavedCategories(category: String, isSelected: Boolean) {
