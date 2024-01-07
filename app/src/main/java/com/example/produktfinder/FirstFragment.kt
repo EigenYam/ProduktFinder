@@ -207,18 +207,6 @@ class FirstFragment : Fragment() {
         return gson.fromJson(json, shopType) ?: emptyList()
     }
 
-    /*private fun getClosestShops(shops: List<Shop>, currentLocation: Location, limit: Int = 5): List<Shop> {
-        val sortedShops = shops.sortedBy { shop ->
-            val shopLocation = Location("ShopLocation")
-            shopLocation.latitude = shop.latitude
-            shopLocation.longitude = shop.longitude
-
-            val distance = currentLocation.distanceTo(shopLocation)
-            distance
-        }
-        //Limit is set to 5 to only display the 5 closest shops
-        return sortedShops.subList(0, limit)
-    }*/
     private fun getClosestShopsWithDistance(shops: List<Shop>, currentLocation: Location, limit: Int = 5): List<Pair<Shop, Double>> {
         val shopDistancePairs = shops.map { shop ->
             val shopLocation = Location("ShopLocation")
