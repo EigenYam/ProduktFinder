@@ -10,6 +10,7 @@ import com.example.produktfinder.databinding.FragmentFirstBinding
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.graphics.Color
 import android.location.Location
 import android.location.LocationManager
 import android.widget.TextView
@@ -102,6 +103,8 @@ class FirstFragment : Fragment() {
                                     val shopTextView = TextView(requireContext())
                                     // Customize the appearance for each shop item
                                     shopTextView.text = "${shop.name} - $distance km \n"
+                                    shopTextView.textSize = 18f
+                                    shopTextView.setTextColor(Color.BLACK)
                                     shopTextView.setOnClickListener {
                                         // Pass the selected shop information to the next fragment
                                         val bundle = Bundle().apply {
