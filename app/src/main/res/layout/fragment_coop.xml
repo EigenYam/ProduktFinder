@@ -58,6 +58,31 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewNameCoop" />
 
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="379dp"
+            android:layout_height="395dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/savedCategoriesTextView">
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:ignore="SpeakableTextPresentCheck">
+
+
+
+                <ImageView
+                    android:id="@+id/zoomableImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="matrix"
+                    android:src="@drawable/lageplan_edited" />
+
+            </HorizontalScrollView>
+        </ScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

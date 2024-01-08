@@ -103,7 +103,7 @@ class FirstFragment : Fragment() {
                                     val shopTextView = TextView(requireContext())
                                     // Customize the appearance for each shop item
                                     shopTextView.text = "${shop.name} - $distance km \n"
-                                    shopTextView.textSize = 18f
+                                    shopTextView.textSize = 16f
                                     shopTextView.setTextColor(Color.BLACK)
                                     shopTextView.setOnClickListener {
                                         // Pass the selected shop information to the next fragment
