@@ -91,7 +91,7 @@ class FirstFragment : Fragment() {
                                 homeLocation.longitude = 7.322771786461776
 
                                 //val closestShops = getClosestShops(shops, currentLocation)
-                                val closestShopDistancePairs = getClosestShopsWithDistance(shops, currentLocation)
+                                val closestShopDistancePairs = getClosestShopsWithDistance(shops, homeLocation)
 
                                 //val shopInfo = closestShops.joinToString("\n") { it.name }
                                 val shopInfo = closestShopDistancePairs.joinToString("\n") { (shop, distance) ->
