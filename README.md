@@ -13,6 +13,8 @@ Android Studio Giraffe | 2022.3.1 Patch 1 was used for the development
 Compile SDK Version -> 34 (API 34)
 Einstellen im Android Studio unter "File" - "Project Structure" - "Modules"
 
+![img.png](img.png)
+
 
 # Installation der Produktfinder-App auf Ihrem Android-Gerät
 
