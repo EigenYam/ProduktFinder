@@ -3,12 +3,14 @@
 The main purpose of the App is to help people locate products in stores.
 The app also provides a feature to locate the closest stores and create a shopping list.
 
-For the location the a digital floor plan is used
+For further details on the different functionalities check out the documentation "Eigenheer-Yamin_Marie-Aurelien_EPRP_final-report.pfd"
 
 
 ## Prerequisites:
 
 Android Studio Giraffe | 2022.3.1 Patch 1 was used for the development
+
+![img_1.png](img_1.png)
 
 Compile SDK Version -> 34 (API 34)
 Einstellen im Android Studio unter "File" - "Project Structure" - "Modules"
