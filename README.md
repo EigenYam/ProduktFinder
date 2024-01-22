@@ -9,7 +9,9 @@ For the location the a digital floor plan is used
 ## Prerequisites:
 
 Android Studio Giraffe | 2022.3.1 Patch 1 was used for the development
+
 Compile SDK Version -> 34 (API 34)
+Einstellen im Android Studio unter "File" - "Project Structure" - "Modules"
 
 
 # Installation der Produktfinder-App auf Ihrem Android-Gerät
@@ -17,6 +19,7 @@ Compile SDK Version -> 34 (API 34)
 ## Anleitungen:
 
 Run apps on a hardware device: https://developer.android.com/studio/run/device
+
 Debugging aktivieren: https://developer.android.com/studio/debug/dev-options
 
 ## Voraussetzungen:
