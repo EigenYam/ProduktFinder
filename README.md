@@ -28,16 +28,26 @@ Debugging aktivieren: https://developer.android.com/studio/debug/dev-options
 
 
 ## Vorbereitung:
+
 1.	Android Studio installieren: Stellen Sie sicher, dass Android Studio auf Ihrem Computer installiert ist. Überprüfen Sie die erforderliche Version in den "Prerequisites".
 
 2.	Android-Gerät oder Emulator bereitstellen: Sie benötigen ein Android-Gerät
 
 3.	USB-Debugging aktivieren:
+   
 a.	Gehen Sie auf Ihrem Android-Gerät in die Einstellungen.
+
 b.	Geben Sie "Build-Nummer" ein in der Suchliste.
+
 c.	Tippen Sie mehrmals auf "Build-Nummer", bis Sie eine Benachrichtigung erhalten, dass Sie Entwickler sind.
+
 d.	Gehen Sie zurück und öffnen Sie die "Entwickleroptionen".
+
 e.	Aktivieren Sie "USB-Debugging".
+
+
+![image](https://github.com/EigenYam/ProduktFinder/assets/146526234/0e894ddb-bf9d-48b6-8d2d-e3374ce40beb)
+
  
 ## App Installation:
 1.	Repository klonen:
