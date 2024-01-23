@@ -41,37 +41,36 @@ Debugging aktivieren: https://developer.android.com/studio/debug/dev-options
 
 ## Schritte zur App Installation:
 - Repository klonen:
-  a.	https://github.com/EigenYam/ProduktFinder
-  b.	Öffnen Sie die Kommandozeile auf Ihrem Computer. 
-  c.	Geben Sie git clone https://github.com/EigenYam/ProduktFinder.git ein. 
-  d.	Oder laden Sie de ZIP Datei herunter.
+  - a.	https://github.com/EigenYam/ProduktFinder
+  - b.	Öffnen Sie die Kommandozeile auf Ihrem Computer. 
+  - c.	Geben Sie git clone https://github.com/EigenYam/ProduktFinder.git ein. 
+  - d.	Oder laden Sie de ZIP Datei herunter.
 
 ![img_3.png](img_3.png)
 
 - Android Studio öffnen:
-  a.	Starten Sie Android Studio. 
-  b.	Wählen Sie "Open an existing project" und navigieren Sie zum geklonten Repository.
+  - a.	Starten Sie Android Studio. 
+  - b.	Wählen Sie "Open an existing project" und navigieren Sie zum geklonten Repository.
 
 ![img_4.png](img_4.png)
 
-Gerät anschliessen:
-    a.	Verbinden Sie Ihr Android-Gerät über USB mit Ihrem Computer.   
-    b.	Es sollte in Android Studio im Bereich für angeschlossene Geräte angezeigt werden. 
-    c.	DEBUGGING MUSS AKTIVIERT SEIN
+- Gerät anschliessen:
+  - a.	Verbinden Sie Ihr Android-Gerät über USB mit Ihrem Computer.   
+  - b.	Es sollte in Android Studio im Bereich für angeschlossene Geräte angezeigt werden. 
+  - c.	DEBUGGING MUSS AKTIVIERT SEIN
 
 ![img_5.png](img_5.png)
 
-
-App auf dem Gerät ausführen:
-    a.	Wählen Sie Ihr Gerät in der Geräteliste von Android Studio aus.
-    b.	Klicken Sie auf den 'Run'-Button (grüner Pfeil).
-    c.	Die App wird kompiliert und auf Ihrem Gerät installiert.
+- App auf dem Gerät ausführen:
+  - a.	Wählen Sie Ihr Gerät in der Geräteliste von Android Studio aus.
+  - b.	Klicken Sie auf den 'Run'-Button (grüner Pfeil).
+  - c.	Die App wird kompiliert und auf Ihrem Gerät installiert.
 
 ![img_6.png](img_6.png)
 
-App testen:
-    a.	Nach erfolgreicher Installation öffnet sich die App automatisch auf Ihrem Gerät.
-    b.	Überprüfen Sie alle Funktionalitäten der App.
+- App testen:
+  - a.	Nach erfolgreicher Installation öffnet sich die App automatisch auf Ihrem Gerät.
+  - b.	Überprüfen Sie alle Funktionalitäten der App.
 
 ## Fehlerbehebung
 
