@@ -26,30 +26,93 @@ Run apps on a hardware device: https://developer.android.com/studio/run/device
 
 Debugging aktivieren: https://developer.android.com/studio/debug/dev-options
 
-## Voraussetzungen:
 
-- Android Studio installiert auf Ihrem Computer (Version Siehe Prerequisites)
-- Ein Android-Gerät oder ein Emulator
-- USB-Debugging auf Ihrem Android-Gerät aktiviert
-- Aktuellste Version von Produktfinder aus dem GitHub-Repository
+## Vorbereitung:
+1.	Android Studio installieren: Stellen Sie sicher, dass Android Studio auf Ihrem Computer installiert ist. Überprüfen Sie die erforderliche Version in den "Prerequisites".
 
-## Schritte zur Installation:
-Repository klonen: Verwenden Sie den Befehl git clone [https://github.com/EigenYam/ProduktFinder.git] in Ihrer Kommandozeile, um das Repository von GitHub auf Ihren lokalen Computer zu klonen.
+2.	Android-Gerät oder Emulator bereitstellen: Sie benötigen ein Android-Gerät
 
-Android Studio öffnen: Starten Sie Android Studio und öffnen Sie das geklonte Projekt.
+3.	USB-Debugging aktivieren:
+a.	Gehen Sie auf Ihrem Android-Gerät in die Einstellungen.
+b.	Geben Sie "Build-Nummer" ein in der Suchliste.
+c.	Tippen Sie mehrmals auf "Build-Nummer", bis Sie eine Benachrichtigung erhalten, dass Sie Entwickler sind.
+d.	Gehen Sie zurück und öffnen Sie die "Entwickleroptionen".
+e.	Aktivieren Sie "USB-Debugging".
+ 
+## App Installation:
+1.	Repository klonen:
+   
+a.	https://github.com/EigenYam/ProduktFinder
 
-Android-Gerät vorbereiten: Aktivieren Sie das USB-Debugging auf Ihrem Android-Gerät gemäss der offiziellen Anleitung von Google.
+b.	Öffnen Sie die Kommandozeile auf Ihrem Computer.
 
-Gerät anschliessen: Verbinden Sie Ihr Android-Gerät über USB mit Ihrem Computer. Es sollte in Android Studio im Bereich für angeschlossene Geräte angezeigt werden.
+c.	Geben Sie git clone https://github.com/EigenYam/ProduktFinder.git ein.
 
-App auf dem Gerät ausführen: Wählen Sie Ihr Gerät in der Geräteliste von Android Studio aus und klicken Sie auf den 'Run'-Button (grüner Pfeil), um die App zu kompilieren und auf Ihrem Gerät zu installieren.
+d.	Oder laden Sie de ZIP Datei herunter.
 
-App testen: Nach erfolgreicher Installation öffnet sich die App automatisch auf Ihrem Gerät. Überprüfen Sie alle Funktionalitäten der App.
+
+
+
+![image](https://github.com/EigenYam/ProduktFinder/assets/146526234/6b1d7733-7cd2-442b-9036-b4648e9c6446)
+
+
+
+
+
+ 
+
+
+2.	Android Studio öffnen:
+   
+a.	Starten Sie Android Studio.
+
+b.	Wählen Sie "Open an existing project" und navigieren Sie zum geklonten Repository.
+
+ ![image](https://github.com/EigenYam/ProduktFinder/assets/146526234/2d20798c-3667-4eb4-ae7e-f09a068d45a6)
+
+
+
+3.	Gerät anschliessen:
+   
+a.	Verbinden Sie Ihr Android-Gerät über USB mit Ihrem Computer.
+
+b.	Es sollte in Android Studio im Bereich für angeschlossene Geräte angezeigt werden.
+
+c.	DEBUGGING MUSS AKTIVIERT SEIN
+
+![image](https://github.com/EigenYam/ProduktFinder/assets/146526234/45acc686-6d26-445a-b23b-e01ab93d23da)
+
+ 
+
+4.	App auf dem Gerät ausführen:
+   
+a.	Wählen Sie Ihr Gerät in der Geräteliste von Android Studio aus.
+
+b.	Klicken Sie auf den 'Run'-Button (grüner Pfeil).
+
+c.	Die App wird kompiliert und auf Ihrem Gerät installiert.
+
+ 
+![image](https://github.com/EigenYam/ProduktFinder/assets/146526234/3100d324-4866-4282-8d41-6d01e99e2d7f)
+
+
+
+5.	App testen:
+   
+a.	Nach erfolgreicher Installation öffnet sich die App automatisch auf Ihrem Gerät.
+
+b.	Überprüfen Sie alle Funktionalitäten der App.
+
+
 
 ## Fehlerbehebung
 
-Sollten Probleme bei der Installation oder Ausführung der App auftreten, überprüfen Sie:
-- Ist das USB-Debugging auf Ihrem Gerät korrekt aktiviert?
-- Verwenden Sie die richtige Version des Android SDK, die mit dem Projekt kompatibel ist? (Siehe Prerequisites)
-- Sind alle erforderlichen Abhängigkeiten im Projekt ordnungsgemäss installiert?
-- Bei weiteren Problemen erstellen Sie bitte ein Issue im GitHub-Repository.
+•	Probleme lösen:
+
+•	Überprüfen Sie, ob das USB-Debugging korrekt aktiviert ist.
+
+•	Stellen Sie sicher, dass Sie die richtige Version des Android SDK verwenden.
+
+•	Überprüfen Sie, ob alle Abhängigkeiten im Projekt ordnungsgemäss installiert sind.
+
+•	Bei weiteren Problemen erstellen Sie ein Issue im GitHub-Repository.
