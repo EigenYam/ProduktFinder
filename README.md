@@ -36,6 +36,7 @@ Debugging aktivieren: https://developer.android.com/studio/debug/dev-options
   c.	Tippen Sie mehrmals auf "Build-Nummer", bis Sie eine Benachrichtigung erhalten, dass Sie Entwickler sind.
   d.	Gehen Sie zurück und öffnen Sie die "Entwickleroptionen".
   e.	Aktivieren Sie "USB-Debugging".
+
 ![img_2.png](img_2.png)
 
 ## Schritte zur App Installation:
