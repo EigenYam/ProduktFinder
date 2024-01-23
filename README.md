@@ -31,25 +31,53 @@ Debugging aktivieren: https://developer.android.com/studio/debug/dev-options
 - Android Studio installiert auf Ihrem Computer (Version Siehe Prerequisites)
 - Ein Android-Gerät oder ein Emulator
 - USB-Debugging auf Ihrem Android-Gerät aktiviert
-- Aktuellste Version von Produktfinder aus dem GitHub-Repository
+  a.	Gehen Sie auf Ihrem Android-Gerät in die Einstellungen.
+  b.	Geben Sie "Build-Nummer" ein in der Suchliste.
+  c.	Tippen Sie mehrmals auf "Build-Nummer", bis Sie eine Benachrichtigung erhalten, dass Sie Entwickler sind.
+  d.	Gehen Sie zurück und öffnen Sie die "Entwickleroptionen".
+  e.	Aktivieren Sie "USB-Debugging".
+![img_2.png](img_2.png)
 
-## Schritte zur Installation:
-Repository klonen: Verwenden Sie den Befehl git clone [https://github.com/EigenYam/ProduktFinder.git] in Ihrer Kommandozeile, um das Repository von GitHub auf Ihren lokalen Computer zu klonen.
+## Schritte zur App Installation:
+- Repository klonen:
+    a.	https://github.com/EigenYam/ProduktFinder
+    b.	Öffnen Sie die Kommandozeile auf Ihrem Computer.
+    c.	Geben Sie git clone https://github.com/EigenYam/ProduktFinder.git ein.
+    d.	Oder laden Sie de ZIP Datei herunter.
 
-Android Studio öffnen: Starten Sie Android Studio und öffnen Sie das geklonte Projekt.
+![img_3.png](img_3.png)
 
-Android-Gerät vorbereiten: Aktivieren Sie das USB-Debugging auf Ihrem Android-Gerät gemäss der offiziellen Anleitung von Google.
+- Android Studio öffnen:
+    a.	Starten Sie Android Studio.
+    b.	Wählen Sie "Open an existing project" und navigieren Sie zum geklonten Repository.
 
-Gerät anschliessen: Verbinden Sie Ihr Android-Gerät über USB mit Ihrem Computer. Es sollte in Android Studio im Bereich für angeschlossene Geräte angezeigt werden.
+![img_4.png](img_4.png)
 
-App auf dem Gerät ausführen: Wählen Sie Ihr Gerät in der Geräteliste von Android Studio aus und klicken Sie auf den 'Run'-Button (grüner Pfeil), um die App zu kompilieren und auf Ihrem Gerät zu installieren.
+Gerät anschliessen:
+    a.	Verbinden Sie Ihr Android-Gerät über USB mit Ihrem Computer.
+    b.	Es sollte in Android Studio im Bereich für angeschlossene Geräte angezeigt werden.
+    c.	DEBUGGING MUSS AKTIVIERT SEIN
 
-App testen: Nach erfolgreicher Installation öffnet sich die App automatisch auf Ihrem Gerät. Überprüfen Sie alle Funktionalitäten der App.
+![img_5.png](img_5.png)
+
+
+App auf dem Gerät ausführen:
+    a.	Wählen Sie Ihr Gerät in der Geräteliste von Android Studio aus.
+    b.	Klicken Sie auf den 'Run'-Button (grüner Pfeil).
+    c.	Die App wird kompiliert und auf Ihrem Gerät installiert.
+
+![img_6.png](img_6.png)
+
+App testen:
+    a.	Nach erfolgreicher Installation öffnet sich die App automatisch auf Ihrem Gerät.
+    b.	Überprüfen Sie alle Funktionalitäten der App.
 
 ## Fehlerbehebung
 
 Sollten Probleme bei der Installation oder Ausführung der App auftreten, überprüfen Sie:
-- Ist das USB-Debugging auf Ihrem Gerät korrekt aktiviert?
-- Verwenden Sie die richtige Version des Android SDK, die mit dem Projekt kompatibel ist? (Siehe Prerequisites)
-- Sind alle erforderlichen Abhängigkeiten im Projekt ordnungsgemäss installiert?
-- Bei weiteren Problemen erstellen Sie bitte ein Issue im GitHub-Repository.
+•	Probleme lösen:
+•	Überprüfen Sie, ob das USB-Debugging korrekt aktiviert ist.
+•	Stellen Sie sicher, dass Sie die richtige Version des Android SDK verwenden.
+•	Überprüfen Sie, ob alle Abhängigkeiten im Projekt ordnungsgemäss installiert sind.
+•	Bei weiteren Problemen erstellen Sie ein Issue im GitHub-Repository.
+
