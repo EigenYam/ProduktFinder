@@ -30,33 +30,33 @@ Debugging aktivieren: https://developer.android.com/studio/debug/dev-options
 
 - Android Studio installiert auf Ihrem Computer (Version Siehe Prerequisites)
 - Ein Android-Gerät oder ein Emulator
-- USB-Debugging auf Ihrem Android-Gerät aktiviert
-  a.	Gehen Sie auf Ihrem Android-Gerät in die Einstellungen.
-  b.	Geben Sie "Build-Nummer" ein in der Suchliste.
-  c.	Tippen Sie mehrmals auf "Build-Nummer", bis Sie eine Benachrichtigung erhalten, dass Sie Entwickler sind.
-  d.	Gehen Sie zurück und öffnen Sie die "Entwickleroptionen".
-  e.	Aktivieren Sie "USB-Debugging".
+- USB-Debugging auf Ihrem Android-Gerät aktiviert 
+- a.	Gehen Sie auf Ihrem Android-Gerät in die Einstellungen. 
+- b.	Geben Sie "Build-Nummer" ein in der Suchliste. 
+- c.	Tippen Sie mehrmals auf "Build-Nummer", bis Sie eine Benachrichtigung erhalten, dass Sie Entwickler sind. 
+- d.	Gehen Sie zurück und öffnen Sie die "Entwickleroptionen". 
+- e.	Aktivieren Sie "USB-Debugging".
 
 ![img_2.png](img_2.png)
 
 ## Schritte zur App Installation:
 - Repository klonen:
-    a.	https://github.com/EigenYam/ProduktFinder
-    b.	Öffnen Sie die Kommandozeile auf Ihrem Computer.
-    c.	Geben Sie git clone https://github.com/EigenYam/ProduktFinder.git ein.
-    d.	Oder laden Sie de ZIP Datei herunter.
+  - a.	https://github.com/EigenYam/ProduktFinder
+  - b.	Öffnen Sie die Kommandozeile auf Ihrem Computer. 
+  - c.	Geben Sie git clone https://github.com/EigenYam/ProduktFinder.git ein. 
+  - d.	Oder laden Sie de ZIP Datei herunter.
 
 ![img_3.png](img_3.png)
 
 - Android Studio öffnen:
-    a.	Starten Sie Android Studio.
-    b.	Wählen Sie "Open an existing project" und navigieren Sie zum geklonten Repository.
+  - a.	Starten Sie Android Studio. 
+  - b.	Wählen Sie "Open an existing project" und navigieren Sie zum geklonten Repository.
 
 ![img_4.png](img_4.png)
 
 Gerät anschliessen:
-    a.	Verbinden Sie Ihr Android-Gerät über USB mit Ihrem Computer.
-    b.	Es sollte in Android Studio im Bereich für angeschlossene Geräte angezeigt werden.
+    a.	Verbinden Sie Ihr Android-Gerät über USB mit Ihrem Computer.   
+    b.	Es sollte in Android Studio im Bereich für angeschlossene Geräte angezeigt werden. 
     c.	DEBUGGING MUSS AKTIVIERT SEIN
 
 ![img_5.png](img_5.png)
