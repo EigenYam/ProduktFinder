@@ -41,10 +41,10 @@ Debugging aktivieren: https://developer.android.com/studio/debug/dev-options
 
 ## Schritte zur App Installation:
 - Repository klonen:
-  - a.	https://github.com/EigenYam/ProduktFinder
-  - b.	Öffnen Sie die Kommandozeile auf Ihrem Computer. 
-  - c.	Geben Sie git clone https://github.com/EigenYam/ProduktFinder.git ein. 
-  - d.	Oder laden Sie de ZIP Datei herunter.
+  a.	https://github.com/EigenYam/ProduktFinder
+  b.	Öffnen Sie die Kommandozeile auf Ihrem Computer. 
+  c.	Geben Sie git clone https://github.com/EigenYam/ProduktFinder.git ein. 
+  d.	Oder laden Sie de ZIP Datei herunter.
 
 ![img_3.png](img_3.png)
 
